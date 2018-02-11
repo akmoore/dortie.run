@@ -21,6 +21,8 @@ class CreateEventsTable extends Migration
             $table->string('wind');
             $table->integer('rating')->nullable();
             $table->timestamps();
+
+            $table->foreign('run_id')->references('id')->on('runs')->onDelete('cascade');
         });
     }
 
